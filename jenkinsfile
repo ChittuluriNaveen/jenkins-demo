@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                echo 'Code is already cloned by Jenkins'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh 'javac HelloWorld.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                sh 'java HelloWorld'
+            }
+        }
+    }
+}
